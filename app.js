@@ -1,58 +1,32 @@
-let value = document.querySelector(`#value`)
-let decrease = document.querySelector(`.decrease`)
-let increase = document.querySelector(`.increase`)
-let reset = document.querySelector(`.reset`)
-let btns = document.querySelectorAll(`.btn`)
+let value = document.querySelector(`#value`);
+let decrease = document.querySelector(`.decrease`);
+let increase = document.querySelector(`.increase`);
+let reset = document.querySelector(`.reset`);
+let btns = document.querySelectorAll(`.btn`);
 
-reset.addEventListener(`click`, function () {
-        Reset();
-//         if (value.textContent > 0) {
-//     value.style.color= `green`
-// } else if (value.textContent < 0) {
-//     value.style.color= `red`
-// } else{
-//     value.style.color = `black`
-// }
-    })
+reset.addEventListener(`click`, () => {
+  Reset();
+});
 
-increase.addEventListener(`click`, function () {
-    // value = value.textContent++
-    value.textContent ++
-    // value.style.color= `green`
-//     if (value.textContent > 0) {
-//     value.style.color= `green`
-// } else if (value.textContent < 0) {
-//     value.style.color= `red`
-// } else{
-//     value.style.color = `black`
-// }
-})
-decrease.addEventListener(`click`, function () {
-    // value = value.textContent--
-    value.textContent--
-//     if (value.textContent > 0) {
-//     value.style.color= `green`
-// } else if (value.textContent < 0) {
-//     value.style.color= `red`
-// } else{
-//     value.style.color = `black`
-// }
-})
+increase.addEventListener(`click`, () => {
+  value.textContent++;
+});
+decrease.addEventListener(`click`, () => {
+  value.textContent--;
+});
 
-    function Reset() {
-    value.textContent = 0
-    // value.style.color = `black`
-}
+Reset = () => {
+  value.textContent = 0;
+};
 
-btns.forEach(function(btn){
-    btn.addEventListener(`click`, function () {
-    console.log(`hi`);
+btns.forEach(function (btn) {
+  btn.addEventListener(`click`, () => {
     if (value.textContent > 0) {
-    value.style.color= `green`
-} else if (value.textContent < 0) {
-    value.style.color= `red`
-} else{
-    value.style.color = `black`
-}
-})
-})
+      value.style.color = `green`;
+    } else if (value.textContent < 0) {
+      value.style.color = `red`;
+    } else {
+      value.style.color = `black`;
+    }
+  });
+});
